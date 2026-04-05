@@ -15,7 +15,7 @@ export class ContactService {
     async sendContactEmail(dto: CreateContactDto) {
         await this.transporter.sendMail({
             from: `"Trustinance Kontaktformular" <${process.env.MAIL_USER}>`,
-            to: process.env.MAIL_TO_DEV,
+            to: process.env.MAIL_TO,
             subject: `Neue Kontaktanfrage: ${dto.thema}`,
             html: `
         <h2>Neue Kontaktanfrage über die Website</h2>
